@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300,400;0,600;1,400&family=Roboto+Condensed&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 70px;
+}
+
+#bran{
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+}
+
+#brand {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+}
+#brand1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
+#main-title {
+    font-size: 20px;
+    margin-top: 20px;
+    
+}
+#sub-title {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #333333;
+}
+
+.form{
+    margin: 30px 0 0 0;
+}
+
+.form label{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    padding: 0 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+   
+}
+.form label input{
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+
+.button {
+    padding: 10px;
+    text-align: center;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 108%;
+    background-color: #007bff;
+    text-align: center;
+    font-family: Noto Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.56px;
+    border-radius: 8px;
+    background: var(--blue-1, #2F80ED);
+}
+button:hover {
+    background-color: #0056b3;
+}
+#parrafo {
+    margin: 15px 0;
+    margin-top: 20px;
+    text-align: center;
+    color: #828282;
+    font-size: 13px;
+}
+
+.icons{
+    margin: 15px 0;
+    text-align: center;
+}
+.icons i {
+    border-radius: 80%;
+    padding: 15px;
+    cursor: pointer;
+    border: solid 1px #888;
+    margin: 0 4px ;
+    transition: background-color 0.3s ease;
+}
+
+.icons i:hover {
+    background-color: rgb(78, 106, 123);
+    color: #fff;
+}
+.modid{
+    text-align: center;
+    color: #828282
+}
+.imagen{
+    width: 100px;
+}
+
+
+.modif{
+    text-align: center;
+    color: #828282
+}
+.login-register-body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+.head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-back{
+    margin-bottom: 10px;
+    color: #2D9CDB;
+    border: none;
+    font-size: 15px;
+    background-color: #fff;
+}
+
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2F80ED;
+    color: #fff;
+    border-radius: 10px;
+    border: hidden;
+    margin: 5px;
+    padding: 15px;
+    font-size: 12px;
+    width: 82px;
+    height: 38px;
+    cursor: pointer;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.login-register-div{
+    display: flex;
+    flex-direction: column;
+}
+.login-register-div > h5{
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+.form-edit{
+    width: 845px;
+    height: 827px;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    padding: 40px;
+}
+.form-edit >h2{
+    font-weight: 400;
+    font-size: 24px;
+}
+.form-edit >h3{
+    font-weight: 500;
+    font-size: 13px;
+}
+.profil{
+    width: 416px;
+    height: 130px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-data{
+    width: 416px;
+    height: 52px;
+    border-radius: 10px;
+    border: 1px solid #828282;
+}
+.input-data-2{
+    width: 416px;
+    height: 91px;
+    border-radius: 10px;
+    border: 1px solid #828282;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-bottom: 100px;
+    color: #828282;
+}
+.footer > h4{
+    font-weight: 300;
+}
+.body-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 60px;
+}
+.body-title >h1{
+    font-weight: 400;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.body-title >h2{
+    font-weight: 300;
+    font-size: 18px;
+}
+.personal-title > h2{
+    font-weight: 400;
+    font-size: 24px;
+}
+.personal-title > h3{
+    font-weight: 500;
+    font-size: 13px;
+    color: #828282;
+}
+.form-personal{
+    width: 845px;
+    height: 580px;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.button-edit{
+    width: 95px;
+    height: 38px;
+    color: #828282;
+    border: 1px solid #828282;
+    border-radius: 12px;
+    background-color: #fff;
+
+}
+.profil-personal{
+    width: 100%;
+    height: 13%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    border-top: 1px solid #D3D3D3;
+    padding: 0 40px;
+}
+.profil-personal-edit{
+    width: 100%;
+    height: 17.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+.profil-personal-edit:nth-child(3){
+    border-top: 1px solid #D3D3D3;
+    color: #BDBDBD;
+}
+.profil-personal >h5{
+    width: 35%;
+    color: #BDBDBD;
+}
+.profil-personal >span{
+    width: 65%;
+}
