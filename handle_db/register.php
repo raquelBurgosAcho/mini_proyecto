@@ -1,6 +1,4 @@
 <?php
- 
-
 if (isset($_POST["logoutButton"])) {
     session_start();
     session_unset(); // Limpia todas las variables de sesión
@@ -10,7 +8,7 @@ if (isset($_POST["logoutButton"])) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $correo = $_se["correo"];
+    $correo = $_POST["correo"];
     $nombre = $_POST["nombre"];
     $bio = $_POST["bio"];
     $telefono = $_POST["telefono"];

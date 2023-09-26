@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         $result = $mysqli->query("INSERT INTO usuarios(correo, contrasena) VALUES ('$correo', '$hash')");
         if($result) {
-            echo "Registro exitoso. Puedes iniciar sesión.";
+            header("Location: /login.php");
         } else {
             echo "Error al registrar.";
         }
