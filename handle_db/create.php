@@ -3,6 +3,11 @@
 require_once($_SERVER["DOCUMENT_ROOT"] . "/configuracion/data.php");
 
 // Función para verificar si el correo ya existe
+function correoExiste($mysqli, $correo) {
+    $query = "SELECT correo FROM usuarios WHERE correo = '$correo'";
+    $result = $mysqli->query($query);
+    return $result->num_rows > 0;
+}
 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -10,18 +15,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $contrasena = $_POST["contrasena"];
     $hash = password_hash($contrasena, PASSWORD_DEFAULT);
    
-    
-$result = $mysqli->query("INSERT INTO usuarios(correo, contrasena) VALUES ('$correo', '$hash')");
-if($result) {
-    header("location: /creation.php");
-} else {
-    echo "error al registrar";
+    if (correoExiste($mysqli, $correo)) {
+        header("Location: register.php");
+        exit(); // Asegúrate de salir del script después de la redirección.
+    } else {
+        $result = $mysqli->query("INSERT INTO usuarios(correo, contrasena) VALUES ('$correo', '$hash')");
+        if($result) {
+            echo "Registro exitoso. Puedes iniciar sesión.";
+        } else {
+            echo "Error al registrar.";
+        }
+    }
+}
 
-};
 
-$hash = password_hash($contrasena, PASSWORD_DEFAULT);
 
- }
+
+
+
     
 
        

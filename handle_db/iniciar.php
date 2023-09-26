@@ -4,22 +4,30 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/configuracion/data.php");
 if (isset($_POST["btningresar"])) {
     $correo = $_POST["correo"];
     $contrasena = $_POST["contrasena"];
-    // Hash de la contraseña
-    $hash = password_hash($contrasena, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO usuarios (correo, contrasena) VALUES (?, ?)";
+    // Verifica si el correo existe en la base de datos
+    $query = "SELECT contrasena FROM usuarios WHERE correo = ?";
     $stmt = $mysqli->prepare($query);
-    $stmt->bind_param("ss", $correo, $hash);
+    $stmt->bind_param("s", $correo);
+    $stmt->execute();
+    $stmt->store_result();
 
-    if ($stmt->execute()) {
-        // Los datos se insertaron correctamente
-        header("Location: register.php");
-        exit;
+    if ($stmt->num_rows == 1) {
+        $stmt->bind_result($contrasena_hash);
+        $stmt->fetch();
+
+        // Verifica si la contraseña es correcta
+        if (password_verify($contrasena, $contrasena_hash)) {
+            // Inicio de sesión exitoso, redirige a la página deseada
+            session_start();
+            $_SESSION["correo"] = $correo;
+            header("Location: register.php");
+            exit;
+        } else {
+            echo '<div class="alert">Contraseña incorrecta.</div>';
+        }
     } else {
-        // Manejar el error de la base de datos
-        echo '<div class="alert">Error al insertar en la base de datos: ' . $stmt->error . '</div>';
+        echo '<div class="alert">El correo no está registrado.</div>';
     }
-} else {
-    echo '<div class="alert">ACCESO DENEGADO</div>';
 }
 ?>
