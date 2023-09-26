@@ -300,8 +300,81 @@ button:hover {
 }
 .profil-personal >h5{
     width: 35%;
-    color: #BDBDBD;
+    color: #e44d4d;
 }
 .profil-personal >span{
     width: 65%;
 }
+/* Estilos para la navegación de usuario */
+.user-navigation {
+    position: relative;
+}
+
+/* Estilos para la línea de separación */
+.separator {
+    width: 40px;
+    background-color: #ccc;
+}
+
+/* Estilos para el contenedor de opciones de usuario */
+.user-options {
+    position: absolute;
+    top: 16px; /* Ajusta el valor de top según sea necesario */
+    right: 20px;
+}
+
+/* Estilos para el cuadro de perfil */
+.profile-box {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px; /* Ajusta el ancho según sea necesario */
+    margin-bottom: 10px;
+}
+
+/* Estilos para la imagen de perfil */
+.profile-image img {
+    width: 32px; /* Ajusta el tamaño según sea necesario */
+    height: 32px; /* Ajusta el tamaño según sea necesario */
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* Estilos para el enlace de perfil */
+.profile-link {
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* Estilos para el icono de grupo */
+.group-icon img {
+    width: 32px; /* Ajusta el tamaño según sea necesario */
+    height: 32px; /* Ajusta el tamaño según sea necesario */
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* Estilos para el botón de cierre de sesión */
+.logout-button button {
+    color: #ff0000; /* Color rojo */
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos para el icono de cierre de sesión */
+.logout-icon {
+    width: 16px; /* Ajusta el tamaño según sea necesario */
+    height: 16px; /* Ajusta el tamaño según sea necesario */
+    margin-right: 8px;
+}
+

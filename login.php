@@ -18,7 +18,7 @@
                     <p>Login</p>
 
                 
-                <form class="form" action="/handle_db/register.php"  method="post" id="signup-form">
+                <form class="form" action="/handle_db/iniciar.php"  method="post" id="signup-form">
                     <label>
                         <i class='bx bx-envelope'></i>
                         <input type="email" id="email" name="correo" placeholder="Email" class="input">
@@ -28,7 +28,7 @@
                         <input type="text" id="password" name="contrasena" placeholder="Password" class="input">
                     </label>
                     <div id="start-coding-btn" class="mt-4">
-                        <button class="button" type="submit">Login</button>
+                        <input name="btningresar" class="button" type="submit" value="iniciar seccion">
                     </div>
                 </form>
                 <h5 id="parrafo">or continue with these social profiles</h5>
@@ -38,7 +38,7 @@
                     <i class='bx bxl-twitter'></i>
                     <i class='bx bxl-github'></i>
                 </div>
-                <p class="modif"> Don’t have an account yet? <a class="directorio" href="/index.php">Register</a> </p>
+                <p class="modif"> Don’t have an account yet? <a class="directorio" href="/creation.php">Register</a> </p>
             </div>
         </div>
     </div>

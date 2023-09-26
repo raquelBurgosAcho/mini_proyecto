@@ -10,7 +10,7 @@
 <body>
     <div class="login-register-body">
         <div class="head">
-            <h1 class="logo">devchallenges</h1>
+        <img class="imagen" src="/img/dev.jpg" alt="Logo de devchallenges">
             <div class="perfil">
                 <h2>Xanthe Neal</h2>
             </div>
@@ -28,14 +28,19 @@
                         <div class="profil">
                             <h5>CHANGE PHOTO</h5>
                             <label for="image">sube una imagen;</label>
-                            <input type="file" name="image" id="image" class="input-data">
+                            <input type="file" name="imagen" id="image" class="input-data">
+                            <?php if (!empty($imagenData)) { ?>
+                           <img src="data:image/jpeg;base64,<?php echo base64_encode($imagenData); ?>" alt="Imagen de usuario" id="profile-image">
+                           <?php } else { ?>
+                           <img src="img\descarga.png" alt="Imagen de usuario predeterminada" id="profile-image">
+                            <?php } ?>
                             <button type="submit">subir una imagen</button>
                             
                         </div>
                             <h5>Name</h5>
-                            <input type="text" placeholder="Nombre" name="nombre" id="name" class="input-data">
+                            <input type="text" placeholder="Nombre" name="nombre" id="name" class="input-data" >
                             <h5>Bio</h5>
-                            <input type="bio" placeholder="Biografia" name="bio" id="bio" class="input-data-2">
+                            <input type="text" placeholder="Biografia" name="bio" id="bio" class="input-data-2">
                             <h5>Phone</h5>
                             <input type="tel" placeholder="telefono" name="telefono" id="phone" class="input-data">
                             <h5>Email</h5>
@@ -54,10 +59,7 @@
     </div>
 
     <script>
-        // Obtén el formulario y el botón de guardar
-        const form = document.getElementById("formRegister");
-        const saveButton = form.querySelector("button[type=submit]");
-
+      
 
     </script>
 </body>
