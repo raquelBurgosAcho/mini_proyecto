@@ -18,7 +18,7 @@
                     <p>Login</p>
 
                 
-                <form class="form" action="/handle_db/create.php"  method="post" id="signup-form">
+                <form class="form" action="/handle_db/iniciar.php"  method="post" id="signup-form">
                     <label>
                         <i class='bx bx-envelope'></i>
                         <input type="email" id="email" name="correo" placeholder="Email" class="input">

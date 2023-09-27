@@ -1,6 +1,7 @@
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"] . "/configuracion/data.php");
 
+
 if (isset($_POST["btningresar"])) {
     $correo = $_POST["correo"];
     $contrasena = $_POST["contrasena"];
@@ -20,7 +21,11 @@ if (isset($_POST["btningresar"])) {
         if (password_verify($contrasena, $contrasena_hash)) {
             // Inicio de sesión exitoso, redirige a la página deseada
             session_start();
-            $_SESSION["correo"] = $correo;
+        $_SESSION["correo"] = $correo;
+        $_SESSION["nombre"] = $nombre; // Almacena el nombre en la sesión
+        $_SESSION["bio"] = $bio; // Almacena la bio en la sesión
+        $_SESSION["telefono"] = $telefono; // Almacena el teléfono en la sesión
+        header("Location: register.php");
             header("Location: register.php");
             exit;
         } else {
