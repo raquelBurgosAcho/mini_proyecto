@@ -59,7 +59,10 @@
     </div>
 
     <script>
-      
+      document.getElementById("backButton").addEventListener("click", function() {
+    window.location.href = "/handle_db/register.php"; 
+});
+
 
     </script>
 </body>

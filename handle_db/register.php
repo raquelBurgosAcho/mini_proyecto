@@ -24,8 +24,7 @@ if (isset($_SESSION["correo"])) {
     $stmt->fetch();
     $stmt->close();
 
-    // Ruta de la imagen de perfil del usuario
-    $targetFile = "imagenes/" . $imagen;
+
 } 
 
 if (isset($_POST["logoutButton"])) {
@@ -76,17 +75,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Actualiza los datos del usuario en la base de datos (solo los campos que se desean cambiar)
     $update_query = "UPDATE usuarios SET nombre = ?, telefono = ?, bio = ?, imagen = ?, contrasena = ? WHERE correo = ?";
     $update_stmt = $mysqli->prepare($update_query);
-    $update_stmt->bind_param("ssssss", $nombre, $telefono, $bio, $nombreArchivo, $contrasena_hash, $correo);
+    $update_stmt->bind_param("ssssss", $nombre, $telefono, $bio, $imagen, $contrasena_hash, $correo);
 
     if ($update_stmt->execute()) {
         // Actualización exitosa, puedes mostrar un mensaje de éxito si es necesario
         echo "Datos actualizados con éxito.";
-
+        $targetFile = $imagen;
         // Actualiza las variables de sesión con los nuevos datos   
         $_SESSION["correo"] = $correo;
         $_SESSION["nombre"] = $nombre;
         $_SESSION["bio"] = $bio;
         $_SESSION["telefono"] = $telefono;
+       
+        
     } else {
         // Manejar el error de la base de datos
         echo "Error al actualizar datos de usuario: " . mysqli_error($mysqli);
@@ -101,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css"> <!-- You can link your CSS file here -->
+    <link rel="stylesheet" href="/style.css"> <!-- You can link your CSS file here -->
     <title>Personal Info</title>
 </head>
 <body>
@@ -140,20 +141,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>
                 Group chat
             </div>
-            <form method="post" action="register.php">
+            
     <div class="logout-button">
         <button class="logout-btn" type="submit" name="logoutButton">
-            <img src="/img/cerrar-sesion.png" alt="Icono de cierre">
+            <img   class="imagenlogout"  src="/img/cerrar-sesion.png" alt="Icono de cierre">
             <span>Logout</span>
         </button>
     </div>
 </form>
     </nav>
-                <button id="editButton" type="submit" name="btnEditar" class="button-edit">Edit</button>
+      <button id="editButton" type="submit" name="btnEditar" class="button-edit">Edit</button>
                     </div>
                     <div class="profil-personal-edit">
                         <h5>Photo</h5>
-                        <img src="<?php echo $targetFile; ?>" alt="User Image" id="profile-image" style="max-width: 200px; max-height: 200px;">
+                        <img src="/mini_proyecto/handle_db/<?php echo $targetFile; ?>" alt="User Image" id="profile-image" style="max-width: 50px; max-height: 50px;">
+
+
                     </div>
                     <div class="profil-personal">
                         <h5>Name</h5>

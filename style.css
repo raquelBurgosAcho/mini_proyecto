@@ -309,6 +309,12 @@ button:hover {
 .user-navigation {
     position: relative;
 }
+.imagenlogout {
+    width: 20px; /* Establece el ancho deseado, por ejemplo, 20px */
+    height: 20px;
+
+
+}
 
 /* Estilos para la línea de separación */
 .separator {
